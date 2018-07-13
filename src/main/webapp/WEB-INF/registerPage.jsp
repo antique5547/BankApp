@@ -7,7 +7,54 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>registerPage</title>
+<script type="text/javascript">
+$("#LoginButton").on('click',function(){
+	var uname=$("#uname").val();
+	var pwd=$("#password").val();
+	if(uname === ""){
+		alert("Enter Username");
+		$("#uname").focus();
+		return false;
+	}
+	if(pwd === ""){
+		alert("Enter Password");
+		$("#password").focus();
+		return false;
+	}
+	return true;
+	
+})
+
+$("#RegisterButton").on('click',function(){
+	var fullname=$("#fullname").val();
+	var uname=$("#uname").val();
+	var emailId=$("#emailId").val();
+	var pwd=$("#password").val();
+	if(fullname === ""){
+		alert("Enter Fullname");
+		$("#fullname").focus();
+		return false;
+	}
+	if(uname === ""){
+		alert("Enter Username");
+		$("#uname").focus();
+		return false;
+	}
+	if(emailId === ""){
+		alert("Enter EmailID");
+		$("#emailId").focus();
+		return false;
+	}
+	if(pwd === ""){
+		alert("Enter Password");
+		$("#password").focus();
+		return false;
+	}
+	return true;
+	
+})
+</script>
 </head>
 <body>
 <c:choose>
@@ -19,19 +66,19 @@
 <tbody>
 <tr style="height: 12px;">
 <td style="height: 12px; width: 250px;">FullName</td>
-<td style="height: 12px; width: 262px;"><input type="text" name="fullname"> </td>
+<td style="height: 12px; width: 262px;"><input type="text" name="fullname" id="fullname"> </td>
 </tr>
 <tr style="height: 12px;">
 <td style="height: 12px; width: 250px;">Username</td>
-<td style="height: 12px; width: 262px;"><input type="text" name="uname"> </td>
+<td style="height: 12px; width: 262px;"><input type="text" name="uname" id="uname"> </td>
 </tr>
 <tr style="height: 18px;">
 <td style="height: 18px; width: 250px;">Email Address</td>
-<td style="height: 18px; width: 262px;"><input type="text" name="emailId"></td>
+<td style="height: 18px; width: 262px;"><input type="text" name="emailId" id="emailId"></td>
 </tr>
 <tr style="height: 18px;">
 <td style="height: 18px; width: 250px;">Password</td>
-<td style="height: 18px; width: 262px;"><input type="password" name="password"></td>
+<td style="height: 18px; width: 262px;"><input type="password" name="password" id="password"></td>
 </tr>
 
 <tr style="height: 18px;">
@@ -45,7 +92,7 @@
 </td>
 </tr>
 <tr style="height: 18px;">
-<td style="height: 18px; width: 250px;" colspan="2" align="center"><input type="submit" value="Register"></td>
+<td style="height: 18px; width: 250px;" colspan="2" align="center"><input type="submit" value="Register" id="RegisterButton"></td>
 </tr>
 </tbody>
 </table>
@@ -60,11 +107,11 @@
 <tbody>
 <tr style="height: 12px;">
 <td style="height: 12px; width: 250px;">Username</td>
-<td style="height: 12px; width: 262px;"><input type="text" name="uname"> </td>
+<td style="height: 12px; width: 262px;"><input type="text" name="uname" id="uname"> </td>
 </tr>
 <tr style="height: 18px;">
 <td style="height: 18px; width: 250px;">Password</td>
-<td style="height: 18px; width: 262px;"><input type="password" name="password"></td>
+<td style="height: 18px; width: 262px;"><input type="password" name="password" id="password"></td>
 </tr>
 
 <tr style="height: 18px;">
@@ -78,7 +125,7 @@
 </td>
 </tr>
 <tr style="height: 18px;">
-<td style="height: 18px; width: 250px;" colspan="2" align="center"><input type="submit" value="Login"></td>
+<td style="height: 18px; width: 250px;" colspan="2" align="center"><input type="submit" value="Login" id="LoginButton"></td>
 </tr>
 </tbody>
 </table>

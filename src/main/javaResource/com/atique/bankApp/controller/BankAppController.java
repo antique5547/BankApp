@@ -201,4 +201,11 @@ public class BankAppController {
 		return "userEditPage";
 	}
 	
+	@RequestMapping(value="checkUserValidation.bapp")
+	public @ResponseBody boolean checkUserValidation(HttpServletRequest req) {
+		String uname=req.getParameter("uname");
+		
+		return bAppService.checkUserAvailibility(uname);
+	}
+	
 }

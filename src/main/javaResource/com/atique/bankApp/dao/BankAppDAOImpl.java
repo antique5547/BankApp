@@ -85,4 +85,9 @@ public class BankAppDAOImpl implements BankAppDAO{
 		
 	}
 	
+	public List getUserByUserName(String uname) {
+		Session sess = SessionUtil.getSession();
+		return sess.createQuery("select userName from UserMaster where userName=:uname").setString("uname", uname).list();
+	}
+	
 }

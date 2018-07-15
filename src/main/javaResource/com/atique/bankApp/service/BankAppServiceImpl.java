@@ -137,4 +137,12 @@ public List<AccountStatement> getStatements(HttpServletRequest req) {
 	int loggedInId=Integer.parseInt(req.getSession().getAttribute("loggedInId").toString());
 		return baDao.getStatements(loggedInId);
 	}
+
+public boolean checkUserAvailibility(String uname) {
+	List list = baDao.getUserByUserName(uname);
+	if(list.size()==0)
+		return true;
+	else
+		return false;
+}
 }

@@ -262,7 +262,7 @@ $("#userUpdateButton").on('click',function(){
 <tr style="height: 15px;">
 <c:set var="count" value="${count + 1}" scope="page"/>
 <td style="width: 50px; ">${count }</td>
-<td style="width: 113px; ">${acStmt.type }</td>
+<td style="width: 113px; "><c:if test="${acStmt.type eq 'CREDIT'}"><font color="green"></c:if><c:if test="${acStmt.type eq 'DEBIT'}"><font color="red"></c:if> ${acStmt.type }</font></td>
 <td style="width: 114px; ">${acStmt.time }</td>
 <td style="width: 115px; ">${acStmt.amount }</td>
 </tr>

@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>registerPage</title>
 <script type="text/javascript">
+var validUserName=false;
 $("#LoginButton").on('click',function(){
 	var uname=$("#uname").val();
 	var pwd=$("#password").val();
@@ -51,9 +52,34 @@ $("#RegisterButton").on('click',function(){
 		$("#password").focus();
 		return false;
 	}
-	return true;
+	if(!validUserName){
+		alert("Please Enter the valid Username");
+		return false;
+	}
+	
+	return true;;
 	
 })
+
+function checkUserValidation() {
+	var uname=$("#uname").val();
+	var a=uname!=""?(uname.split(" ").length>1?true:false):true;
+	if(a){
+		alert("space is not allowed");
+		return false;
+	}
+	$.ajax({
+		url:"checkUserValidation.bapp?uname="+uname,
+		success: function(data) {
+			if(data==false){
+				alert("Username already present! Try another one.");
+				validUserName=false;
+			}else{
+				validUserName=true;
+			}
+		}
+	})
+}
 </script>
 </head>
 <body>
@@ -70,7 +96,7 @@ $("#RegisterButton").on('click',function(){
 </tr>
 <tr style="height: 12px;">
 <td style="height: 12px; width: 250px;">Username</td>
-<td style="height: 12px; width: 262px;"><input type="text" name="uname" id="uname"> </td>
+<td style="height: 12px; width: 262px;"><input type="text" name="uname" id="uname" onblur="checkUserValidation();"> </td>
 </tr>
 <tr style="height: 18px;">
 <td style="height: 18px; width: 250px;">Email Address</td>

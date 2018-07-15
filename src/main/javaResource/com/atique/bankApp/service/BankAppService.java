@@ -19,4 +19,5 @@ public AccountDetails getAccountsDetails(int loggedInId);
 public String addDeposit(HttpServletRequest req);
 public String withDrawMoney(HttpServletRequest req);
 public List<AccountStatement> getStatements(HttpServletRequest req);
+public boolean checkUserAvailibility(String uname);
 }

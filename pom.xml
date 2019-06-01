@@ -141,7 +141,7 @@
       <uniqueVersion>false</uniqueVersion>
       <id>corp1</id>
       <name>Corporate Repository</name>
-      <url>scp://repo/maven2</url>
+      <url>/var/lib/jenkins/workspace/BankApp_Dev/target/com.atique.BankApp.war</url>
       <layout>default</layout>
     </repository>
 </distributionManagement>
